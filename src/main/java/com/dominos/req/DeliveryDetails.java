@@ -1,9 +1,8 @@
 package com.dominos.req;
-
 /**
- * @author Anil Aleti
+ * @author Anil
  *
- * Sep 10, 2018
+ * Sep 15, 2018
  */
 public class DeliveryDetails {
 	

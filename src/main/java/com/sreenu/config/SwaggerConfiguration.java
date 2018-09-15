@@ -6,7 +6,13 @@ import javax.servlet.http.HttpServlet;
 
 import io.swagger.jaxrs.config.BeanConfig;
 
+/**
+ * @author Anil
+ *
+ * Sep 15, 2018
+ */
 public class SwaggerConfiguration extends HttpServlet {
+
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
