@@ -10,6 +10,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dominos.req.CustomerDetails;
 import com.dominos.req.DeliveryDetails;
 import com.dominos.req.Order;
@@ -30,7 +33,8 @@ import io.swagger.annotations.Tag;
 @Path("/order")
 @SwaggerDefinition(tags = { @Tag(name = "order service", description = "rest endpoints for order services") })
 public class OrderResource {
-
+	
+private Logger logger = LoggerFactory.getLogger(OrderResource.class);
 	/**
 	 * @param Order
 	 * @return String
@@ -42,9 +46,11 @@ public class OrderResource {
 	@ApiOperation(value = "createOrder")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "order created successfully"),
 			@ApiResponse(code = 404, message = "resource not found") })
-	
+
 	public Response createOrder(Order order) {
+		logger.debug("entered into create order............");
 		String returnString = "created succesfully";
+		
 		return Response.ok().entity(returnString).build();
 
 	}
@@ -60,9 +66,10 @@ public class OrderResource {
 	@ApiOperation(value = "getOrder")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "returns the order details found"),
 			@ApiResponse(code = 404, message = "resource not found") })
-	
+
 	public Response getOrder(@QueryParam(value = "orderId") String orderId) {
-		//http://localhost:7070/order-web/order/getOrder?orderId=1234
+		// http://localhost:7070/order-web/order/getOrder?orderId=1234
+		logger.debug("entered into getOrder()............");
 		Order order = new Order();
 		order.setDate("10-9-2018");
 		order.setOrderId("101");
@@ -71,11 +78,12 @@ public class OrderResource {
 		order.setProductName("pizza");
 		CustomerDetails customerDetails = new CustomerDetails();
 		customerDetails.setCustName("Anil");
-        customerDetails.setMobileNum("91777");
-        DeliveryDetails deliveryDetails = new DeliveryDetails();
-        deliveryDetails.setDlvryLocation("Sr Nagar");
-        order.setCstmrDtls(customerDetails);
-        order.setDelvryDtls(deliveryDetails);
+		customerDetails.setMobileNum("91777");
+		DeliveryDetails deliveryDetails = new DeliveryDetails();
+		deliveryDetails.setDlvryLocation("Sr Nagar");
+		order.setCstmrDtls(customerDetails);
+		order.setDelvryDtls(deliveryDetails);
+		logger.info("response from getOrder()"+order);
 		return Response.ok().entity(order).build();
 	}
 
@@ -90,7 +98,7 @@ public class OrderResource {
 	@ApiOperation(value = "updateOrder")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "returns the updated message"),
 			@ApiResponse(code = 404, message = "resource not found") })
-	
+
 	public Response updateOrder(@QueryParam(value = "orderId") String orderId) {
 
 		String returnString = "updated succesfully";
@@ -105,4 +113,4 @@ public class OrderResource {
 
 	}
 
-} 
+}
