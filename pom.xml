@@ -81,5 +81,11 @@
 			<url>http://localhost:8081/repository/order-web-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
+<scm>
+	<connection>http://localhost:8081/repository/order-web-release/</connection>
+	<developerConnection>http://localhost:8081/repository/order-web-release/</developerConnection>
+	<url>http://localhost:8081/repository/order-web-release/</url>
+	
+</scm>
 
 </project>
