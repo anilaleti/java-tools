@@ -81,11 +81,10 @@
 			<url>http://localhost:8081/repository/order-web-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
-<!--<scm>
-	<connection>http://localhost:8081/repository/order-web-release/</connection>
-	<developerConnection>http://localhost:8081/repository/order-web-release/</developerConnection>
-	<url>http://localhost:8081/repository/order-web-release/</url>
-	
+<scm>
+   <connection>scm:git:https://github.com/anilaleti/order-web.git</connection>
+   <url>https://github.com/anilaleti/order-web</url>
+   <developerConnection>scm:git:https://github.com/anilaleti/order-web.git</developerConnection>
 </scm>
--->
+
 </project>
