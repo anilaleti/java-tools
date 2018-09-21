@@ -99,6 +99,7 @@
 		<connection>scm:git:https://github.com/anilaleti/order-web.git</connection>
 		<url>https://github.com/anilaleti/order-web</url>
 		<developerConnection>scm:git:https://github.com/anilaleti/order-web.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 
 </project>
