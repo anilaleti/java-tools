@@ -68,6 +68,18 @@
 	</dependencies>
 	<build>
 		<finalName>order-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<releaseProfiles>releases</releaseProfiles>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 	<distributionManagement>
 		<repository>
@@ -81,10 +93,10 @@
 			<url>http://localhost:8081/repository/order-web-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
-<scm>
-   <connection>scm:git:https://github.com/anilaleti/order-web.git</connection>
-   <url>https://github.com/anilaleti/order-web</url>
-   <developerConnection>scm:git:https://github.com/anilaleti/order-web.git</developerConnection>
-</scm>
+	<scm>
+		<connection>scm:git:https://github.com/anilaleti/order-web.git</connection>
+		<url>https://github.com/anilaleti/order-web</url>
+		<developerConnection>scm:git:https://github.com/anilaleti/order-web.git</developerConnection>
+	</scm>
 
 </project>
