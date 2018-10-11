@@ -112,5 +112,11 @@ private Logger logger = LoggerFactory.getLogger(OrderResource.class);
 		return "order service is runnig fine";
 
 	}
+	@Path("/prod")
+	@GET
+	public String getProduct() {
+		return "order service is runnig fine";
+
+	}
 
 }
